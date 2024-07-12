@@ -33,7 +33,7 @@ public class ItemController {
 	@GetMapping("/item-view") 
 	public String itemView(Model model) {
 		model.addAttribute("title", "새우깡");
-		model.addAttribute("money", "1500원 ");
+		model.addAttribute("price", "1500원 ");
 		return "item-view";
 	}
 	
