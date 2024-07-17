@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>회원 목록(member-list.html)</title>
+<style type="text/css">
+	table {border-collapse: collapse;}
+	tr, td, th {border : 2px solid #999; }
+
+</style>
+</head>
+<body>
+	<h1>회원 목록</h1>
+	<table>
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>이름</th>	
+			</tr>
+		</thead>
+		<tbody>
+			<tr th:each="member: ${members}">
+				<td th:text="${member.id}"></td>
+				<td th:text="${member.name}"></td>
+			</tr>
+		</tbody>
+	</table>
+	
+	<div>
+	
+	<div th:text="${members}"></div>
+<!-- <div th:text="${members[0]}"></div>-->	
+<!-- <div th:text="${members[0].id}"></div>-->	
+<!-- <div th:text="${members[0].name}"></div>-->
+<!-- 별로안좋은코드 위 3개	-->	
+	</div>
+
+</body>
+</html>
+
