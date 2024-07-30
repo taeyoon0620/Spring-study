@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="himedia.spring.ver2.repository.MemberRepository">
+    
+    <!-- 새로운 회원을 삽입하고 생성된 키를 반환 -->
+    <!-- 대문자로 변경: Query 블록 지정후 , ctrl + shift + x      파라미터는 소문자로 -->
+    <insert id="save" keyProperty="id" useGeneratedKeys="true" parameterType="himedia.spring.ver2.dto.Member">
+        INSERT INTO MEMBER (NAME)
+        VALUES (#{name})
+    </insert>
+
+    <!-- ID로 회원 검색 -->
+    <select id="findById" parameterType="Long" resultType="himedia.spring.ver2.dto.Member">
+        SELECT * FROM MEMBER WHERE ID = #{id}
+    </select>
+
+    <!-- 이름으로 회원 검색 -->
+    <select id="findByName" parameterType="String" resultType="himedia.spring.ver2.dto.Member">
+        SELECT * FROM MEMBER WHERE NAME = #{name}
+    </select>
+
+    <!-- 모든 회원 검색 -->
+    <select id="findAll">
+        SELECT * FROM MEMBER
+    </select>
+
+</mapper>
+
+<!-- 
+  주석:
+  - 네임스페이스는 해당 리포지토리 인터페이스의 전체 이름과 일치해야 합니다.
+  - keyProperty는 삽입 후 생성된 키를 캡처하는 데 사용됩니다.
+  - parameterType은 쿼리에 전달되는 매개변수의 타입을 지정합니다.
+  - resultType은 쿼리에서 반환되는 결과의 타입을 지정합니다.
+  - #{...}는 동적 쿼리 매개변수를 나타냅니다.
+	 select person 메서드명 parametertype 매개변수 resulttype 리턴타입 
+ 	#{id} = 동적쿼리 parameter 동적쿼리로만든다는뜻 
+-->
