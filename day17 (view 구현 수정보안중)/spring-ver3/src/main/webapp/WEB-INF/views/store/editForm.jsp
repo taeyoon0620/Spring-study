@@ -9,13 +9,27 @@
 <meta charset="UTF-8">
 <title>상품 수정 폼</title>
 <link href="${resPath}/css/bootstrap.min.css" rel="stylesheet" />
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .container {
+    flex: 1;
+  }
+  footer {
+    flex-shrink: 0;
+  }
+</style>
 </head>
 <body>
   <!--START : HEADER-->
   <header class="p-3 text-bg-dark">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"> <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none"> 
+          <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap">
             <use xlink:href="#bootstrap" />
           </svg>
         </a>
@@ -44,62 +58,58 @@
       <h2>상품 수정 폼</h2>
     </div>
 
+    <form action="${context}store/items/edit" method="post">
+      <div class="row">
+        <div class="col-2 fw-bolder">
+          <label for="id" class="form-label">상품 ID</label>
+        </div>
+        <div class="col">
+          <input type="text" id="id" name="id" class="form-control" value="1">
+        </div>
+      </div>
 
+      <div class="row my-2">
+        <div class="col-2 fw-bolder">
+          <label for="name" class="form-label">상품명</label>
+        </div>
+        <div class="col">
+          <input type="text" id="name" name="name" class="form-control" value="감자깡" >
+        </div>
+      </div>
 
-     <form action="${context}store/items/1/edit" method="post">
-    <div class="row">
-      <div class="col-2 fw-bolder">
-        <label for="id" class="form-label">상품 ID</label>
+      <div class="row my-2">
+        <div class="col-2 fw-bolder">
+          <label for="price" class="form-label">가격</label>
+        </div>
+        <div class="col">
+          <input type="text" id="price" name="price" class="form-control" value="1000">
+        </div>
       </div>
-      <div class="col">
-        <input type="text" id="id" name="id" class="form-control" value="1">
-      </div>
-    </div>
 
-    <div class="row my-2">
-      <div class="col-2 fw-bolder">
-        <label for="name" class="form-label">상품명</label>
+      <div class="row my-2">
+        <div class="col-2 fw-bolder">
+          <label for="quantity" class="form-label">수량</label>
+        </div>
+        <div class="col">
+          <input type="text" id="quantity" name="quantity" class="form-control" value="100">
+        </div>
       </div>
-      <div class="col">
-        <input type="text" id="name" name="name" class="form-control" value="감자깡" >
-      </div>
-    </div>
 
-    <div class="row my-2">
-      <div class="col-2 fw-bolder">
-        <label for="price" class="form-label">가격</label>
-      </div>
-      <div class="col">
-        <input type="text" id="price" name="price" class="form-control" value="1000">
-      </div>
-    </div>
+      <hr class="my-4">
 
-    <div class="row my-2">
-      <div class="col-2 fw-bolder">
-        <label for="quantity" class="form-label">수량</label>
+      <div class="row">
+        <div class="col">
+          <button type="submit" name="action" value="cancel" class="btn btn-outline-dark w-100 btn-lg">취소</button>
+        </div>
+        <div class="col">
+          <button type="submit" name="action" value="save" class="btn btn-secondary w-100 btn-lg">저장</button>
+        </div>
       </div>
-      <div class="col">
-        <input type="text" id="quantity" name="quantity" class="form-control" value="100">
-      </div>
-    </div>
-
-    <hr class="my-4">
-
-    <div class="row">
-      <div class="col">
-        <button type="button" class="btn btn-outline-dark w-100 btn-lg" 
-        onclick="">취소</button>
-      </div>
-      <div>
-        <button type="submit" class="btn btn-secondary w-100 btn-lg" 
-        >저장</button>
-      </div>
-    </div>
     </form>
   </div>
 
   <!-- START : FOOTER -->
-  <footer class="py-3 my-4 text-bg-dark">
+  <footer class="py-3 text-bg-dark">
     <ul class="nav justify-content-center pb-3 mb-3">
       <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Home</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Features</a></li>

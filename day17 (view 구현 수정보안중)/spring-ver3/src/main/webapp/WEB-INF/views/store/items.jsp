@@ -10,10 +10,23 @@
 <meta charset="UTF-8">
 <title>상품 목록</title>
 <link href="${resPath}/css/bootstrap.min.css" rel="stylesheet" />
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .container {
+    flex: 1;
+  }
+  footer {
+    flex-shrink: 0;
+  }
+</style>
 </head>
 <body>
   <!--START : HEADER-->
-    <header class="p-3 text-bg-dark">
+  <header class="p-3 text-bg-dark">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
@@ -42,7 +55,6 @@
 
   <!--START : CONTAINER-->
   <div class="container" style="max-width: 600px;">
-  
     <div class="py-5 text-center">
       <h2>상품 목록</h2>
     </div>
@@ -68,17 +80,14 @@
         </tbody>
       </table>
     </div>
-    <div>
-    <div class="d-gird gap-2">
-      <button type="button"
-       class="btn btn-secondary btn-lg"
-       onclick="location.href='${context}store/items/add'">상품 등록</button>
-    </div>
+    <div class="d-grid gap-2">
+      <button type="button" class="btn btn-secondary btn-lg"
+              onclick="location.href='${context}store/items/add'">상품 등록</button>
     </div>
   </div>
   
   <!-- START : FOOTER -->
-  <footer class="py-3 my-4 text-bg-dark" style="position:absolute">
+  <footer class="py-3 text-bg-dark">
     <ul class="nav justify-content-center pb-3 mb-3">
       <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Home</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Features</a></li>

@@ -9,6 +9,19 @@
 <meta charset="UTF-8">
 <title>상품 등록 폼</title>
 <link href="${resPath}/css/bootstrap.min.css" rel="stylesheet" />
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .container {
+    flex: 1;
+  }
+  footer {
+    flex-shrink: 0;
+  }
+</style>
 </head>
 <body>
   <!--START : HEADER-->
@@ -47,56 +60,49 @@
 
     <form action="${context}store/items/add" method="post">
 
-    <div class="row my-2">
-      <div class="col-2 fw-bolder">
-        <label for="name" class="form-label">상품명</label>
-       </div>
-      <div class="col">
-        <input type="text" id="name" name="name" class="form-control" 
-        placeholder="상품명을 입력하세요...."> 
+      <div class="row my-2">
+        <div class="col-2 fw-bolder">
+          <label for="name" class="form-label">상품명</label>
+         </div>
+        <div class="col">
+          <input type="text" id="name" name="name" class="form-control" placeholder="상품명을 입력하세요...."> 
+        </div>
       </div>
-    </div>
 
-    <div class="row my-2">
-      <div class="col-2 fw-bolder">
-        <label for="price" class="form-label">가격</label>
-       </div>
-      <div class="col">
-        <input type="text" id="price" name="price" class="form-control"
-        placeholder="가격을 입력하세요..." >  
+      <div class="row my-2">
+        <div class="col-2 fw-bolder">
+          <label for="price" class="form-label">가격</label>
+         </div>
+        <div class="col">
+          <input type="text" id="price" name="price" class="form-control" placeholder="가격을 입력하세요..." >  
+        </div>
       </div>
-    </div>
 
-    <div class="row my-2">
-      <div class="col-2 fw-bolder">
-        <label for="quantity" class="form-label">수량</label>
-       </div>
-      <div class="col">
-        <input type="text" id="quantity" name="quantity" class="form-control" placeholder="수량을 입력하세요..." > 
+      <div class="row my-2">
+        <div class="col-2 fw-bolder">
+          <label for="quantity" class="form-label">수량</label>
+         </div>
+        <div class="col">
+          <input type="text" id="quantity" name="quantity" class="form-control" placeholder="수량을 입력하세요..." > 
+        </div>
       </div>
-      </div>
-  
-      </form>
+      
       <hr class="my-4">
       
-    <div class="row">
-        <div class="col">
-          <button type="button" class="btn btn-outline-dark w-100 btn-lg"
-           onclick="location.href='${context}/store/items'">목록으로</button>
-          <!-- URI /store/items 물리뷰 /store/items.html -->
-          
+      <div class="row">
+        <div class="col d-grid">
+          <button type="button" class="btn btn-outline-dark w-100 btn-lg" onclick="location.href='${context}/store/items'">목록으로</button>
         </div>
-        
-        <div>
+        <div class="col d-grid">
           <button type="submit" class="btn btn-secondary w-100 btn-lg">상품 등록</button>
-          <!-- URI /store/items/{itemid}/edit 물리뷰 /store/editForm.html  -->
         </div>
-        
       </div>
+      
+    </form>
   </div>
   
   <!-- START : FOOTER -->
-  <footer class="py-3 my-4 text-bg-dark">
+  <footer class="py-3 text-bg-dark mt-auto">
     <ul class="nav justify-content-center pb-3 mb-3">
       <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Home</a></li>
       <li class="nav-item"><a href="#" class="nav-link px-2 text-white">Features</a></li>
