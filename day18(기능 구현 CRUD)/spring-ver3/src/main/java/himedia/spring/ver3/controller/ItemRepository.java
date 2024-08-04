@@ -9,9 +9,13 @@ public interface ItemRepository {
 	
 	void save(Item item);
 	Optional<Item> findById(Long id);
-	// id¸¦ ÀÎ¼ö·Î °Ë»ö, nullÀÌ ¹İÈ¯µÉ ¼ö ÀÖ±â ¶§¹®¿¡ OptionalÀ» »ç¿ë (null¿¡ °üÇÑ Ã³¸® -> Optional »ç¿ë)
+	// idë¥¼ ì¸ìˆ˜ë¡œ ê²€ìƒ‰, nullì´ ë°˜í™˜ë  ìˆ˜ ìˆê¸° ë•Œë¬¸ì— Optionalì„ ì‚¬ìš© (nullì— ê´€í•œ ì²˜ë¦¬ -> Optional ì‚¬ìš©)
 	Optional<Item> findByName(String name);
 	List<Item> findAll();
 	Item update(Long itemId, Item updateItem);
-	// save´Â insert ÇÑ rowÀÇ °³¼ö return, update´Â ¼öÁ¤ÇÑ rowÀÇ °³¼ö return
+	// saveëŠ” insert í•œ rowì˜ ê°œìˆ˜ return, updateëŠ” ìˆ˜ì •í•œ rowì˜ ê°œìˆ˜ return
+
+    public List<Item> findByName(String name) {
+        return itemRepository.findByNameContaining(name);
+    }
 }
