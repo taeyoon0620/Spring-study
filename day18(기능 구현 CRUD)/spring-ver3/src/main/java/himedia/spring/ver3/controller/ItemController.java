@@ -79,6 +79,12 @@ public class ItemController {
     	repository.update(itemId, item);
     	
     	return "redirect:/store/items/{itemId}";
-    	
+
+    @GetMapping("/store/items/search")
+    public String searchItems(@RequestParam("search") String search, Model model) {
+        List<Item> items = itemService.findByName(search);
+        model.addAttribute("items", items);
+        return "itemList";
+    }
     }
 }
