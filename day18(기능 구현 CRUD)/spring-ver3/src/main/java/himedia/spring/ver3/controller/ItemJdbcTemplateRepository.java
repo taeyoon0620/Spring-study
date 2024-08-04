@@ -80,4 +80,6 @@ public class ItemJdbcTemplateRepository implements ItemRepository {
 		
 		return updateItem;
 	}
+	@Override
+	List<Item> findByNameContaining(String name);
 }
